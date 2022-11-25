@@ -34,6 +34,8 @@ class CreateTracerAnswersTable extends Migration
             $table->string('gaji_utama')->nullable();
             $table->string('lembur')->nullable();
             $table->string('gaji_lain')->nullable();
+            $table->string('terdampak')->nullable();
+            $table->string('dampak_corona')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

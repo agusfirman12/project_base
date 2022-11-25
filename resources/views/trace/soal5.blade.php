@@ -26,6 +26,8 @@
       <div class="row justify-content-center " style="padding: 20px;">
         <form action="{{ route('soal5-process') }}" method="post">
             @csrf
+            <input type="hidden" name="id" value="{{ $user->id }}">
+            <input type="hidden" name="nisn" value="{{ $user->nisn }}">
             <div class="title pt-4">
                 <h4>5. Seberapa erat hubungan antara bidang studi dengan pekerjaan anda?</h4>
                </div>
@@ -33,7 +35,7 @@
                  
               <div class="  label-background form-check border rounded"  style="padding:5px; margin: 2px; ">
                 <button class="btn  button"  type="button">
-                 <input type="radio" name="biaya" id="from-AFIRMASI" value="biaya-sendiri" style="width: 20px;">
+                 <input type="radio" name="hubungan" id="from-AFIRMASI" value="Sangat Erat" style="width: 20px;">
                  <label class="form-check-label" for="from-AFIRMASI" >
                   Sangat Erat
                 </label> 
@@ -43,7 +45,7 @@
        
               <div class="  label-background form-check border rounded"  style="padding:5px; margin: 2px; ">
                 <button class="btn  button"  type="button">
-                 <input type="radio" name="biaya" id="from-AFIRMASI" value="bidikmisi">
+                 <input type="radio" name="hubungan" id="from-AFIRMASI" value="Erat">
                  <label class="form-check-label" for="from-AFIRMASI" >
                   Erat
                 </label> 
@@ -53,7 +55,7 @@
 
               <div class="  label-background form-check border rounded"  style="padding:5px; margin: 2px; ">
                 <button class="btn  button"  type="button">
-                 <input type="radio" name="biaya" id="from-AFIRMASI" value="PPA">
+                 <input type="radio" name="hubungan" id="from-AFIRMASI" value="Kurang Erat">
                  <label class="form-check-label" for="from-AFIRMASI" >
                   Kurang Erat
                 </label> 
@@ -63,7 +65,7 @@
             
                 <div class="  label-background form-check border rounded"  style="padding:5px; margin: 2px; ">
                   <button class="btn  button"  type="button">
-                   <input type="radio" name="biaya" id="from-AFIRMASI" value="AFIRMASI">
+                   <input type="radio" name="hubungan" id="from-AFIRMASI" value="Tidak Erat">
                    <label class="form-check-label" for="from-AFIRMASI" >
                    Tidak Erat
                   </label> 
@@ -71,7 +73,7 @@
                   </button>
                 </div>
             <div class="button d-flex justify-content-between" style="margin-top: 20px; margin-left:10px; margin-right:10px;">
-                 <a href="{{ route('soal4') }}">
+                 <a href="{{ route('soal4',['nisn'=>$user->nisn]) }}">
                    <button type="button" class="btn btn-primary">Back</button>
                 </a> 
                     <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Simpan</button>

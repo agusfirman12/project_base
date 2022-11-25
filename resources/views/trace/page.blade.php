@@ -23,7 +23,7 @@
       <div class="row justify-content-center " style="padding: 20px;">
         <form action="{{ route('soal1-process') }}" method="POST">
           @csrf
-              <input type="hidden" name="id" value="{{ $user->id }}">
+              <input type="hidden" name="id_user" value="{{ $user->id }}">
               <input type="hidden" name="nisn" value="{{ $user->nisn }}">
             <div class="title pt-4">
                 <h4>1. Sebutkan sumberdana dalam pembiayaan kuliah ?</h4>
@@ -82,8 +82,8 @@
 
                 <div class="  label-background form-check border rounded" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"  style="padding:5px; margin: 2px; ">
                   <button class="btn  button"  type="button">
-                   <input type="radio" name="akademik" id="from-AFIRMASI" value="Swasta">
-                   <label class="form-check-label" for="from-AFIRMASI" >
+                   <input type="radio" id="from-AFIRMASI1">
+                   <label class="form-check-label" for="from-AFIRMASI1" >
                     Lainya, Tuliskan
                   </label> 
                 
@@ -116,6 +116,8 @@
         <div class="modal-body">
           <form action="{{ route('soal1-process') }}" method="POST">
             @csrf
+            <input type="hidden" name="id_user" value="{{ $user->id }}">
+              <input type="hidden" name="nisn" value="{{ $user->nisn }}">
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Nama:</label>
               <input type="text" class="form-control" id="recipient-name" name="akademi">
