@@ -87,7 +87,7 @@
          
             
             <div class="button d-flex justify-content-between" style="margin-top: 20px; margin-left:10px; margin-right:10px;">
-                 <a href="{{ route('soal2',['id'=>$user->id]) }}">
+                 <a href="{{ route('soal2',['nisn'=>$user->nisn]) }}">
                    <button type="button" class="btn btn-primary">Back</button>
                 </a>
                     <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Simpan</button>

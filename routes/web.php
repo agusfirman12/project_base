@@ -46,6 +46,7 @@ Route::post('/process-login', [TraceController::class, 'loginProcess'])->name('l
 //memberikan penjelasan umum
 //route soal 1
 Route::prefix('/tracer-study/qusetion')->group(function () {
+<<<<<<< HEAD
     Route::get('/soal1/{id?}', [TraceController::class,  'viewSoal1'])->name('soal1');
     Route::post('/soal1/process/', [TraceController::class, 'soal1Process'])->name('soal1-process');
 });
@@ -78,5 +79,39 @@ Route::prefix('/tracer-study/qusetion')->group(function () {
 Route::prefix('/tracer-study/qusetion')->group(function () {
     Route::get('/soal7', [TraceController::class,  'viewSoal7'])->name('soal7');
     Route::post('/soal7/process', [TraceController::class, 'soal7Process'])->name('soal7-process');
+=======
+    Route::get('/soal1/{nisn?}', [TraceController::class,  'viewSoal1'])->name('soal1');
+    Route::post('/soal1/process/',[TraceController::class,'soal1Process'])->name('soal1-process');
+});
+//route soal 2
+Route::prefix('/tracer-study/qusetion')->group(function () {
+    Route::get('/soal2/{nisn?}', [TraceController::class,  'viewSoal2'])->name('soal2');
+    Route::post('/soal2/process',[TraceController::class,'soal2Process'])->name('soal2-process');
+});
+//route soal 3
+Route::prefix('/tracer-study/qusetion')->group(function () {
+    Route::get('/soal3/{nisn?}', [TraceController::class,  'viewSoal3'])->name('soal3');
+    Route::post('/soal3/process',[TraceController::class,'soal3Process'])->name('soal3-process');
+});
+//route soal 4
+Route::prefix('/tracer-study/qusetion')->group(function () {
+    Route::get('/soal4/{nisn?}', [TraceController::class,  'viewSoal4'])->name('soal4');
+    Route::post('/soal4/process',[TraceController::class,'soal4Process'])->name('soal4-process');
+});
+//route soal 5
+Route::prefix('/tracer-study/qusetion')->group(function () {
+    Route::get('/soal5/{nisn?}', [TraceController::class,  'viewSoal5'])->name('soal5');
+    Route::post('/soal5/process',[TraceController::class,'soal5Process'])->name('soal5-process');
+});
+//route soal 6
+Route::prefix('/tracer-study/qusetion')->group(function () {
+    Route::get('/soal6/{nisn?}', [TraceController::class,  'viewSoal6'])->name('soal6');
+    Route::post('/soal6/process',[TraceController::class,'soal6Process'])->name('soal6-process');
+});
+//route soal 7
+Route::prefix('/tracer-study/qusetion')->group(function () {
+    Route::get('/soal7/{nisn?}', [TraceController::class,  'viewSoal7'])->name('soal7');
+    Route::post('/soal7/process',[TraceController::class,'soal7Process'])->name('soal7-process');
+>>>>>>> 56b5a71e4eec324b168ce3635db7a9d006544dfa
     Route::get('/finish', [TraceController::class,  'finish'])->name('finish');
 });

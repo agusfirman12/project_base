@@ -24,6 +24,8 @@
       <div class="row justify-content-center " style="padding: 20px;">
         <form action="{{ route('soal4-process') }}" method="post">
           @csrf
+          <input type="hidden" name="id" value="{{ $user->id }}">
+          <input type="hidden" name="nisn" value="{{ $user->nisn }}">
             <div class="title pt-4">
                 <h4>Tingkat pendidikan apa yang paling tepat/sesuai untuk pekerjaan anda saat ini? </h4>
                </div>
@@ -69,7 +71,7 @@
                 </div>
 
             <div class="button d-flex justify-content-between" style="margin-top: 20px; margin-left:10px; margin-right:10px;">
-                 <a href="{{ route('soal3') }}">
+                 <a href="{{ route('soal3',['nisn'=>$user->nisn]) }}">
                    <button type="button" class="btn btn-primary">Back</button>
                 </a>
                

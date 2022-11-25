@@ -23,6 +23,8 @@
       <div class="row justify-content-center " style="padding: 20px;">
         <form action="{{ route('soal7-process') }}" method="post">
           @csrf
+          <input type="hidden" name="id" value="{{ $user->id }}">
+          <input type="hidden" name="nisn" value="{{ $user->nisn }}">
           <input type="hidden" name="status" value="finised">
             <div class="title pt-4">
                 <h4>7. Apakah perusahaan/wirausaha anda terdampak karena adanya virus corona?</h4>
@@ -37,7 +39,7 @@
               </div>
        
               <div class="  label-background form-check border rounded"  style="padding:15px; margin: 2px; ">
-                 <input type="radio" name="biaya" id="from-AFIRMASI" value="bidikmisi">
+                 <input type="radio" name="terdampak" id="from-AFIRMASI" value="tidak">
                  <label class="form-check-label" for="from-AFIRMASI" >
                   Tidak
                 </label> 
@@ -45,7 +47,7 @@
 
 
             <div class="button d-flex justify-content-between" style="margin-top: 20px; margin-left:10px; margin-right:10px;">
-                  <a href="{{ route('soal6',['user'=>$user->id]) }}">
+                  <a href="{{ route('soal6',['nisn'=>$user->nisn]) }}">
                    <button type="button" class="btn btn-primary">Back</button>
                 </a> 
                     <button type="submit" class="btn btn-success" data-bs-dismiss="modal">finish</button>
@@ -72,27 +74,32 @@
         <div class="modal-body">
           <form action="{{ route('soal7-process') }}" method="POST">
             @csrf
+            <input type="hidden" name="id" value="{{ $user->id }}">
+            <input type="hidden" name="nisn" value="{{ $user->nisn }}">
+            <input type="hidden" name="status" value="finised">
+            <input type="hidden" name="terdampak" value="ya">
+
             <div class="mb-3">
-              <input type="radio" class="form-control" id="recipient-name">
+              <input type="radio" id="recipient-name" name="dampak_corona" value="kehilangan Pekrerjaan">
               <label for="recipient-name" class="col-form-label">Kehilangan Pekerjaan</label>
               
             </div>
             <div class="mb-3">
-              <input type="radio" class="form-control" id="recipient-name">
+              <input type="radio"  id="recipient-name" name="dampak_corona" value="Pendapatan Menurun">
               <label for="recipient-name" class="col-form-label">Pendapatan Menurun</label>
             </div>
             <div class="mb-3">
-              <input type="radio" class="form-control" id="recipient-name">
+              <input type="radio" id="recipient-name" name="dampak_corona" value="Pendapatan Meningkat">
               <label for="recipient-name" class="col-form-label">Pendapatan Meningkat</label>
             </div>
             <div class="mb-3">
-              <input type="radio" class="form-control" id="recipient-name">
+              <input type="radio"  id="recipient-name" name="dampak_corona" value="pindah Profesi">
               <label for="recipient-name" class="col-form-label">Ahli Profesi</label>
               
             </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Lainya</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <input type="text" class="form-control" id="recipient-name" name="dampak_corona">
               
             </div>
             <div class="modal-footer">
