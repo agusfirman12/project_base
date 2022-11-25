@@ -52,9 +52,9 @@
                 <div class="form-floating mb-3">
                     <select aria-label="Default select example"  class="form-select @error('tahun_lulus') is-invalid @enderror" id="floatingPassword" name="jurusan"  required>
                         <option selected>Jurusan</option>
-                        <option value="TRPL">TRPL (Teknologi Rekayasa Perangkat Lunak)</option>
-                        <option value="Mesin">Mesin</option>
-                        <option value="Sipil">Sipil</option>
+                        @foreach ($jurusan as $item)                            
+                        <option value="{{ $item->nama_jurusan }}">{{ $item->nama_jurusan }}</option>
+                        @endforeach
                       </select>
                       @error('tahun_lulus')
                       <div class="invalid-feedback">{{ $message }}</div>

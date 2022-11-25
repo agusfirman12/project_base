@@ -40,22 +40,15 @@
                 Daftar Alumni
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/alumni/TKJ">Jurusan TKJ</a></li>
-                <li><a class="dropdown-item" href="/alumni/TKR">Jurusan TKR</a></li>
-                <li><a class="dropdown-item" href="/alumni/Akuntansi">Jurusan Akuntansi</a></li>
-                <li><a class="dropdown-item" href="/alumni/Multimedia">Jurusan Multimedia</a></li>
-                <li><a class="dropdown-item" href="/alumni/Tata-Boga">Jurusan Tata Boga</a></li>
-                <li><a class="dropdown-item" href="/alumni/Tata_Busana">Jurusan Tata Busana</a></li>
-                <li><a class="dropdown-item" href="/alumni/Teknik Pengelasan">Jurusan Teknik Pengelasan</a></li>
-                <li><a class="dropdown-item" href="/alumni/Agb_Perikanan_airTawar">Jurusan Agb Perikanan Air Tawar</a></li>
+                <x-data-jurusan/>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Lowongan
+                Jurusan
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Lihat Lowongan</a></li>
+                <li><a class="dropdown-item" href="{{ route('view-jurusan') }}">Lihat Jurusan</a></li>
                 <li><a class="dropdown-item" href="">Tambah Lowongan</a></li>
               </ul>
             </li>

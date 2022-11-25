@@ -25,7 +25,7 @@
                     <select class="form-select form-select-sm" name="tipe" aria-label=".form-select-sm example">
                         <option selected>Select User Type</option>
                         <option value="1">Alumni</option>
-                        <option value="2">Admin</option>
+                        <option value="2">Teknisi</option>
                     </select>
                 </div>
                 <button class="w-100 btn btn-lg my-3 text-white shadow" style="background-color: #154286" type="submit">Mulai</button>
